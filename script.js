@@ -147,8 +147,83 @@ console.log(lastLetter("abcd"));
 //   }
 // }
 
-let d = Math.random()
-e = d*100
-e = Math.floor(e)
-console.log(d)
-console.log(e)
+// let d = Math.random()
+// e = d*100
+// e = Math.floor(e)
+// console.log(d)
+// console.log(e)
+
+// ARRAYS
+console.log("ARRAYSsssssssssssss");
+
+const contacts = ['Seye', 'Dad', 'Aaliyah', 'Mum'];
+let chat = contacts[0];
+console.log(chat);
+
+// document.getElementById("demo").innerHTML = contacts.toString();
+// document.getElementById("demo").innerHTML = contacts;
+
+contacts.sort();
+console.log(contacts);
+
+let lastContact = contacts[contacts.length - 1];
+console.log(lastContact);
+
+for (let i = 0; i < contacts.length; i++){
+  console.log(contacts[i]);
+}
+
+for (const contact in contacts){
+  contact.toUpperCase();
+  console.log(contact);
+}
+
+contacts.push("Habiba");
+console.log(contacts);
+
+contacts[contacts.length] = "Fatimat";
+console.log(typeof contacts);
+console.log(Array.isArray(contacts));
+
+document.getElementById("demo").innerHTML = contacts.join(" || ")
+
+contacts.pop();
+console.log(contacts);
+
+const arr1 = ["Cecilie", "Lone"];
+const arr2 = ["Emil", "Tobias", "Linus"];
+const arr3 = ["Robin", "Morgan"];
+const myChildren = arr1.concat(arr2, arr3);
+console.log(myChildren);
+
+
+// The map() method creates a new array by applying a function to each item in the original array
+function toUpper(string) {
+  return string.toUpperCase();
+}
+
+const upperChildren = myChildren.map(toUpper);
+console.log(upperChildren);
+
+function lChildren(child) {
+  return child.startsWith("L");
+}
+
+const filtered = myChildren.filter(lChildren);
+console.log(filtered);
+
+// use break and continue
+
+// while loops
+let c = 0;
+while (c < contacts.length) {
+  console.log(contacts[c]);
+  c++;
+}
+
+// do-while loops The do...while loop guarantees that the code block will run at least once, even if the condition is false from the start.
+c = 0;
+do {
+  console.log(contacts[c]);
+  c++;
+} while (c < contacts.length);
