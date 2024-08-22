@@ -1,12 +1,12 @@
 console.log("Hello World!");
 console.log(23 + 97);
 let a;
-a = (4+6+9)/77;
+a = (4 + 6 + 9) / 77;
 console.log(a);
 
 const MAX = 57;
-let actual = MAX -13
-let percentage = actual / MAX
+let actual = MAX - 13;
+let percentage = actual / MAX;
 
 // function add(a, b) {
 //   return a + b;
@@ -18,21 +18,21 @@ let myName = "Olamide";
 
 // function declaration
 // the func can be called earlier than the declaration
-sayHi("John Doe")
+sayHi("John Doe");
 
 function sayHi(_name) {
   console.log(`Hi ${_name}`);
 }
 
-
 // function expression
 // sayHi("John"); --> error!
-let sayHello = function(_name) {
+let sayHello = function (_name) {
   console.log(`Hello ${_name}`);
 };
 // the func CANNOT be called earlier than the declaration
 sayHello("Mujeeb");
 
+// hoisting in JS is done with function deckarations and not function expresions
 
 // let age = prompt("What is your age?", 18);
 
@@ -68,7 +68,6 @@ sayHello("Mujeeb");
 // Function Declarations are processed before the code block is executed. They are visible everywhere in the block.
 // Function Expressions are created when the execution flow reaches them.
 
-
 // Arrow functions
 let sum = (a, b) => a + b;
 
@@ -79,7 +78,7 @@ let sum = function(a, b) {
 */
 
 // it can be shorter if we have only one argument, no need for parenthesis
-let square = n => n**2
+let square = (n) => n ** 2;
 
 // If there are no arguments, parentheses are empty, but they must be present:
 let sayYolo = () => "YOLO!";
@@ -89,16 +88,49 @@ let sayYolo = () => "YOLO!";
 
 // Sometimes we need a more complex function, with multiple expressions and statements. In that case, we can enclose them in curly braces. The major difference is that curly braces require a return within them to return a value (just like a regular function does).
 
-let add = (a, b) => {  // the curly brace opens a multiline function
+let add = (a, b) => {
+  // the curly brace opens a multiline function
   let result = a + b;
   return result; // if we use curly braces, then we need an explicit "return"
 };
 
 // alert( add(1, 2) ); // 3
 
-console.log(sum(5,7));
+console.log(sum(5, 7));
 console.log(square(4));
 console.log(sayYolo());
+
+const bill = (products, tax) => {
+  let total = 0;
+  for (let i = 0; i < products.length; i++) {
+    total += products[i] * tax;
+  }
+  return total;
+};
+
+// methods are functions associated with objects
+
+//callback functions
+const myFunc = (callbackFunc) => {
+  let value = 50;
+  callbackFunc(value);
+};
+
+myFunc(function (value) {
+  // do something
+  console.log(value);
+});
+
+// forEach
+let people = ["mario", "luigi", "ryu", "shaun", "chun-li"];
+
+people.forEach((person, index) => {
+  console.log(person.toUpperCase(), index);
+});
+// you can also declare callback funtions outside
+
+// Arrow function format
+myFunc((value) => console.log(value));
 
 // JS Call Stack
 // JavaScript engine uses a call stack to manage eat works based on the LIFO (last-in-first-out) principle.xecution contexts.
@@ -111,11 +143,9 @@ console.log(sayYolo());
 // fn(); // stack overflow
 
 let fruit = "Apple";
-console.log(fruit[2])
+console.log(fruit[2]);
 
-
-
-// Assessment 
+// Assessment
 //Write a function called capitalize that takes a string and returns that string with only the first letter capitalized. Make sure that it can take strings that are lowercase, UPPERCASE or BoTh.
 let capitalize = (str) => {
   return str[0].toUpperCase() + str.slice(1).toLowerCase();
@@ -128,10 +158,9 @@ console.log(capitalize("bOtH"));
 // Write a function called lastLetter that takes a string and returns the very last letter of that string
 function lastLetter(str) {
   return str.at(-1);
-};
+}
 
 console.log(lastLetter("abcd"));
-
 
 // let answer = parseInt(prompt("Please enter the number you would like to FizzBuzz up to: "));
 
@@ -156,7 +185,7 @@ console.log(lastLetter("abcd"));
 // ARRAYS
 console.log("ARRAYSsssssssssssss");
 
-const contacts = ['Seye', 'Dad', 'Aaliyah', 'Mum'];
+const contacts = ["Seye", "Dad", "Aaliyah", "Mum"];
 let chat = contacts[0];
 console.log(chat);
 
@@ -169,11 +198,11 @@ console.log(contacts);
 let lastContact = contacts[contacts.length - 1];
 console.log(lastContact);
 
-for (let i = 0; i < contacts.length; i++){
+for (let i = 0; i < contacts.length; i++) {
   console.log(contacts[i]);
 }
 
-for (const contact in contacts){
+for (const contact in contacts) {
   contact.toUpperCase();
   console.log(contact);
 }
@@ -185,7 +214,7 @@ contacts[contacts.length] = "Fatimat";
 console.log(typeof contacts);
 console.log(Array.isArray(contacts));
 
-document.getElementById("demo").innerHTML = contacts.join(" || ")
+document.getElementById("demo").innerHTML = contacts.join(" || ");
 
 contacts.pop();
 console.log(contacts);
@@ -195,7 +224,6 @@ const arr2 = ["Emil", "Tobias", "Linus"];
 const arr3 = ["Robin", "Morgan"];
 const myChildren = arr1.concat(arr2, arr3);
 console.log(myChildren);
-
 
 // The map() method creates a new array by applying a function to each item in the original array
 function toUpper(string) {
